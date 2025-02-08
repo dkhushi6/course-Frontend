@@ -6,7 +6,9 @@ const AllCourse = () => {
 
   useEffect(() => {
     const ViewAllCourses = async () => {
-      const res = await axios.get("http://localhost:4007/seecourses");
+      const res = await axios.get(
+        "https://course-backend-fuja.onrender.com/seecourses"
+      );
       console.log(res.data);
       setCourses(res.data.allCourse);
     };

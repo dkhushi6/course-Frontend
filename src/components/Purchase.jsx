@@ -8,11 +8,14 @@ const Purchase = () => {
   const [quantity, setQuantity] = useState("");
 
   const handlePurchase = async () => {
-    const res = await axios.post("http://localhost:4007/purchase", {
-      userID: userId,
-      courseID: courseId,
-      quantity,
-    });
+    const res = await axios.post(
+      "https://course-backend-fuja.onrender.com/purchase",
+      {
+        userID: userId,
+        courseID: courseId,
+        quantity,
+      }
+    );
     console.log(res.data);
   };
   return (

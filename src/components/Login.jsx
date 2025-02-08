@@ -7,10 +7,13 @@ const Login = () => {
 
   const handleLogIn = async () => {
     try {
-      const res = await axios.post("http://localhost:4007/login", {
-        email,
-        password,
-      });
+      const res = await axios.post(
+        "https://course-backend-fuja.onrender.com/login",
+        {
+          email,
+          password,
+        }
+      );
       console.log(res.data);
     } catch (error) {
       console.error("Error during signup:", error);

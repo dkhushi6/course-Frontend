@@ -9,12 +9,15 @@ const Signup = () => {
 
   const handleSignIn = async () => {
     try {
-      const res = await axios.post("http://localhost:4007/signup", {
-        name,
-        email,
+      const res = await axios.post(
+        "https://course-backend-fuja.onrender.com/signup",
+        {
+          name,
+          email,
 
-        password,
-      });
+          password,
+        }
+      );
 
       console.log(res.data);
     } catch (error) {

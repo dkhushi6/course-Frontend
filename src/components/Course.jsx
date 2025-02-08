@@ -8,12 +8,15 @@ const Course = () => {
   const [duration, setDuration] = useState();
 
   const handleAdd = async () => {
-    const res = await axios.post("http://localhost:4007/addcourse", {
-      name,
-      description,
-      amount,
-      duration,
-    });
+    const res = await axios.post(
+      "https://course-backend-fuja.onrender.com/addcourse",
+      {
+        name,
+        description,
+        amount,
+        duration,
+      }
+    );
     console.log(res.data);
   };
 
