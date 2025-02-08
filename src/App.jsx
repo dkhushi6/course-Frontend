@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import AllCourse from "./components/AllCourse";
-import Course from "./components/course";
+import Course from "./components/Course";
 import Login from "./components/Login";
 import Purchase from "./components/Purchase";
 import Signup from "./components/Signup";
