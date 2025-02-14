@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -15,6 +16,8 @@ const Login = () => {
         }
       );
       console.log(res.data);
+      setEmail("");
+      setPass("");
     } catch (error) {
       console.error("Error during signup:", error);
     }
@@ -25,7 +28,7 @@ const Login = () => {
         className="text-[40px] font-bold text-white
     flex justify-center pt-6"
       >
-        Create account!
+        Log-In to your account
       </div>
       <div className="flex justify-center pt-6">
         <div>
@@ -33,7 +36,7 @@ const Login = () => {
             <input
               type="text"
               placeholder="enter email"
-              className="outline-none py-3 w-[300px] focus:border-[#747171] border-[#404040] border rounded-xl text-white px-3"
+              className="outline-none py-3 w-[300px] focus:border-[#747171] border-[#404040] border rounded-3xl text-white px-3"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -42,18 +45,35 @@ const Login = () => {
             <input
               type="text"
               placeholder="enter password"
-              className="outline-none py-3 w-[300px] focus:border-[#747171] border-[#404040] border rounded-xl text-white px-3"
+              className="outline-none py-3 w-[300px] focus:border-[#747171] border-[#404040] border rounded-3xl text-white px-3"
               value={password}
               onChange={(e) => setPass(e.target.value)}
             />
           </div>
 
           <button
-            className="text-white bg-linear-to-r/srgb from-[#8364D2] to-[#ab90ee]  rounded-xl py-3 w-[300px] text-[20px] font-bold focus:bg-linear-to-r/srgb focus:from-[#ab90ee] focus:to-[#8364D2]"
+            className=" py-3 w-[300px] text-[20px] font-bold rounded-[50px] border border-[#ffaa0bb7] text-[#ffaa0bb7] hover:text-white  hover:bg-linear-to-r/srgb hover:from-[#FFAA0B] hover:to-[#F85739]"
             onClick={handleLogIn}
           >
             Log-In
           </button>
+
+          <div className=" flex justify-center pt-3 font-semibold">
+            <NavLink
+              to="/changepass"
+              className="text-white hover:text-[#ffaa0bb7] hover:underline"
+            >
+              Change password?
+            </NavLink>
+          </div>
+          <div className=" flex justify-center pt-3 font-semibold">
+            <NavLink
+              to="/changeEmail"
+              className="text-white hover:text-[#ffaa0bb7] hover:underline"
+            >
+              Change Email?
+            </NavLink>
+          </div>
         </div>
       </div>
     </div>

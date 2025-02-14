@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const Course = () => {
   const [name, setName] = useState("");
@@ -35,7 +36,7 @@ const Course = () => {
               <input
                 type="text"
                 placeholder="enter name"
-                className="outline-none py-3 w-[300px] focus:border-[#747171] border-[#404040] border rounded-xl text-white px-3"
+                className="outline-none py-3 w-[300px] focus:border-[#747171] border-[#404040] border rounded-3xl text-white px-3"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
@@ -44,7 +45,7 @@ const Course = () => {
               <input
                 type="text"
                 placeholder="enter description"
-                className="outline-none py-3 w-[300px] focus:border-[#747171] border-[#404040] border rounded-xl text-white px-3 h-[150px]"
+                className="outline-none py-3 w-[300px] focus:border-[#747171] border-[#404040] border rounded-3xl text-white px-3 h-[150px]"
                 value={description}
                 onChange={(e) => setDesc(e.target.value)}
               />
@@ -55,7 +56,7 @@ const Course = () => {
                 <input
                   type="text"
                   placeholder="enter amount in $"
-                  className="outline-none py-3 w-[150px] focus:border-[#747171] border-[#404040] border rounded-xl text-white px-3"
+                  className="outline-none py-3 w-[150px] focus:border-[#747171] border-[#404040] border rounded-3xl text-white px-3"
                   value={amount}
                   onChange={(e) => setAmt(e.target.value)}
                 />
@@ -65,7 +66,7 @@ const Course = () => {
                 <input
                   type="text"
                   placeholder="enter duration of the course"
-                  className="outline-none py-3 w-[130px] focus:border-[#747171] border-[#404040] border rounded-xl text-white px-3"
+                  className="outline-none py-3 w-[130px] focus:border-[#747171] border-[#404040] border rounded-3xl text-white px-3"
                   value={duration}
                   onChange={(e) => setDuration(e.target.value)}
                 />
@@ -73,11 +74,19 @@ const Course = () => {
             </div>
 
             <button
-              className="text-white bg-linear-to-r/srgb from-[#8364D2] to-[#ab90ee]  rounded-xl py-3 w-[300px] text-[20px] font-bold focus:bg-linear-to-r/srgb focus:from-[#ab90ee] focus:to-[#8364D2]"
+              className=" py-3 w-[300px] text-[20px] font-bold rounded-[50px] border border-[#ffaa0bb7] text-[#ffaa0bb7] hover:text-white  hover:bg-linear-to-r/srgb hover:from-[#FFAA0B] hover:to-[#F85739]"
               onClick={handleAdd}
             >
               Submit
             </button>
+            <div className=" flex justify-center pt-3 font-semibold">
+              <NavLink
+                to="/changecourse"
+                className="text-white hover:text-[#ffaa0bb7] hover:underline"
+              >
+                Change course?
+              </NavLink>
+            </div>
           </div>
         </div>
       </div>
